@@ -19,17 +19,18 @@ private const val ARG_PARAM3 = "param3"
  * create an instance of this fragment.
  */
 class FragmentDetail : Fragment() {
-    // TODO: Rename and change types of parameters
+
     private var name: String? = null
     private var lastName: String? = null
-    private var avatar: String? = null
+    private var desc: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
             name = it.getString(ARG_PARAM1)
             lastName = it.getString(ARG_PARAM2)
-            avatar = it.getString(ARG_PARAM3)
+            desc = it.getString(ARG_PARAM3)
+//            avatar = it.getString(ARG_PARAM3)
         }
     }
 
@@ -45,28 +46,22 @@ class FragmentDetail : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         tvNameDetail.text = name
         tvLastNameDetail.text = lastName
-        ivAvatarDetail.setImageResource(R.drawable.mini3)
+        tvDesc.text = desc
     }
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment FragmentDetail.
-         */
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance(name: String, lastName: String) =
+        fun newInstance(dog: Dog): FragmentDetail =
             FragmentDetail().apply {
                 arguments = Bundle().apply {
-                    putString(ARG_PARAM1, name)
-                    putString(ARG_PARAM2, lastName)
-                    putString(ARG_PARAM3, avatar)
+                    putString(ARG_PARAM1, dog.name)
+                    putString(ARG_PARAM2, dog.lastName)
+                    putString(ARG_PARAM3, dog.desc)
 
                 }
             }
     }
 }
+
+
+

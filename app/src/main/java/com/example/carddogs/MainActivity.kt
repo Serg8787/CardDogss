@@ -9,6 +9,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         supportFragmentManager
             .beginTransaction()
-            .replace(R.id.frLayoutList,FragmentList.newInstance("1","1")).commit()
+            .replace(R.id.frLayoutList,FragmentList.newInstance()).commit()
     }
 }
