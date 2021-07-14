@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import kotlinx.android.synthetic.main.fragment_list.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -16,10 +18,13 @@ private const val ARG_PARAM2 = "param2"
  * Use the [FragmentList.newInstance] factory method to
  * create an instance of this fragment.
  */
-class FragmentList : Fragment() {
+class FragmentList : Fragment(),DogsListCallback {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    val dogs = arrayListOf<Dog>(Dog("Лайка","Цыбульник" ),
+        Dog("Чихуа","Домашняя"))
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +40,15 @@ class FragmentList : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_list, container, false)
+
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+
+        rvList.adapter = DogAdapter(context,dogs,this)
+        rvList.layoutManager=LinearLayoutManager(context)
     }
 
     companion object {
@@ -53,7 +67,17 @@ class FragmentList : Fragment() {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
+//                    putString(ARG_PARAM3, param3)
+
                 }
             }
+    }
+
+    override fun onItemClickListener(index: Int) {
+        activity?.supportFragmentManager
+            ?.beginTransaction()
+            ?.replace(R.id.frLayoutDetail,FragmentDetail.newInstance(dogs[index].name,dogs[index].lastName))?.commit()
+
+
     }
 }
