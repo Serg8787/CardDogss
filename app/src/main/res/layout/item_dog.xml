@@ -3,13 +3,16 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_margin="5dp"
+    android:layout_marginTop="15dp"
+    android:layout_margin="10dp"
+    app:cardCornerRadius="3dp"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constRootItem"
+        android:background="@drawable/back"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_margin="5dp">
 
         <ImageView
@@ -27,8 +30,11 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:text="Name"
+            android:textColor="@color/black"
+            android:textStyle="bold"
             android:gravity="center"
             android:textSize="25sp"
+            android:layout_marginStart="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/ivAvatarItem"
             tools:layout_editor_absoluteY="16dp" />
@@ -39,6 +45,7 @@
             android:layout_height="match_parent"
             android:text="Порода собаки"
             android:textSize="25sp"
+            android:gravity="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/tvNameItem"

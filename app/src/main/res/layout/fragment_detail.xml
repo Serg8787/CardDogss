@@ -3,17 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/back"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".FragmentDetail">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/idCardView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp">
+
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"           >
+            android:layout_height="match_parent"
+            android:layout_margin="10dp" >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constFirst"
@@ -93,19 +92,20 @@
                 android:id="@+id/tvSpeciasDetail"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Западно-сибирская лайка"
                 android:layout_marginStart="10dp"
-                android:textSize="17dp"
+                android:text="Западно-сибирская лайка"
+                android:textSize="19dp"
                 app:layout_constraintBottom_toBottomOf="@+id/textView4"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/textView4"
-                app:layout_constraintTop_toBottomOf="@+id/ivAvatarDetail" />
+                app:layout_constraintTop_toTopOf="@+id/textView4" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constTwo"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginTop="15dp"
             app:layout_constraintTop_toBottomOf="@+id/constFirst"
             android:layout_margin="5dp">
 
@@ -116,6 +116,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="Описание породы"
+
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:ignore="MissingConstraints" />
@@ -124,6 +125,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:text="Моя собака"
+                android:textSize="22sp"
                 android:gravity="center"
                 app:layout_constraintTop_toBottomOf="@+id/tvLabelDesc"
                 app:layout_constraintStart_toStartOf="parent"
@@ -136,13 +138,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
+                android:layout_marginTop="15dp"
                 app:layout_constraintTop_toBottomOf="@+id/constTwo">
 
                 <TextView
                     android:id="@+id/tvLabelAllDescDetail"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Основные особенности"
+                    android:text="Особенности"
                     style="@style/styleGlav"
                     android:gravity="center"
                     app:layout_constraintTop_toTopOf="parent"/>
@@ -151,6 +154,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="Ключевые особенности"
+                    android:textSize="18sp"
                     app:layout_constraintTop_toBottomOf="@+id/tvLabelAllDescDetail"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -161,6 +165,7 @@
                 android:id="@+id/constFour"
                 app:layout_constraintTop_toBottomOf="@id/constThree"
                 android:layout_margin="5dp"
+                android:layout_marginTop="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
@@ -174,14 +179,12 @@
                     android:id="@+id/tvFactDetail"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:textSize="18sp"
                     app:layout_constraintTop_toBottomOf="@+id/tvLabelFacts"
-                    android:text="Факты о породе"/>
+                    android:text="Факты о породе"
+                   />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
-
-
-
 
 </ScrollView>

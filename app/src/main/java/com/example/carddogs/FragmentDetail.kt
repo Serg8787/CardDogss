@@ -50,6 +50,7 @@ class FragmentDetail : Fragment() {
         fun newInstance(dog: Dog): FragmentDetail =
             FragmentDetail().apply {
                 desc = dog.desc
+                name = dog.name
                 allDesc = dog.allDesc
                 avatarImage = dog.avatar
                 fact = dog.facts
