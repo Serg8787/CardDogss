@@ -1,5 +1,6 @@
 package com.example.carddogs
 
+import android.graphics.Bitmap
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -23,6 +24,9 @@ class FragmentDetail : Fragment() {
     private var name: String? = null
     private var lastName: String? = null
     private var desc: String? = null
+    private var allDesc: String? = null
+    private var fact: String? = null
+    private var avatarImage:Bitmap? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,8 +49,10 @@ class FragmentDetail : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         tvNameDetail.text = name
-//        tvLastNameDetail.text = lastName
-//        tvDesc.text = desc
+        tvDescDetail.text = desc
+        tvAllDescDetail.text = allDesc
+        ivAvatarDetail.setImageBitmap(avatarImage)
+        tvFactDetail.text = fact
     }
 
     companion object {
@@ -55,10 +61,15 @@ class FragmentDetail : Fragment() {
             FragmentDetail().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, dog.name)
-                    putString(ARG_PARAM2, dog.lastName)
+//                    putString(ARG_PARAM2, dog.lastName)
                     putString(ARG_PARAM3, dog.desc)
 
                 }
+                desc = dog.desc
+                allDesc = dog.allDesc
+                avatarImage = dog.avatar
+                fact = dog.facts
+
             }
     }
 }

@@ -7,6 +7,10 @@ import java.io.Serializable
 
 
 data class Dog(val name:String,
-               val lastName:String,
-               val desc:String
+               val age:String,
+               val specias:String,
+               val desc:String?,
+               val allDesc:String?,
+               val facts:String?,
+               val avatar:Bitmap?
                ) : Serializable

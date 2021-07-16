@@ -34,7 +34,7 @@
             tools:layout_editor_absoluteY="16dp" />
 
         <TextView
-            android:id="@+id/tvLastNameItem"
+            android:id="@+id/tvSpeciasItem"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:text="Порода собаки"

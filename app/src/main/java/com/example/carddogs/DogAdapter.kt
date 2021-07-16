@@ -14,17 +14,18 @@ class DogAdapter(val context:Context?,val dogsList:ArrayList<Dog>,val callback: 
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-
+        holder.avatar.setImageBitmap(dogsList[position].avatar)
         holder.name.text = dogsList[position].name
-        holder.lastName.text = dogsList[position].lastName
+        holder.specias.text = dogsList[position].specias
         holder.root.setOnClickListener { callback.onItemClickListener(position) }
     }
 
     override fun getItemCount():Int = dogsList.size
 }
 class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
+    val avatar = itemView.ivAvatarItem
     val name = itemView.tvNameItem
-    val lastName = itemView.tvLastNameItem
+    val specias = itemView.tvSpeciasItem
     val root = itemView.constRootItem
 }
 interface DogsListCallback{
