@@ -90,7 +90,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/ivAvatarDetail" />
 
             <TextView
-                android:id="@+id/tvDescDetail"
+                android:id="@+id/tvSpeciasDetail"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="Западно-сибирская лайка"
