@@ -45,8 +45,8 @@ class FragmentDetail : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         tvNameDetail.text = name
-        tvLastNameDetail.text = lastName
-        tvDesc.text = desc
+//        tvLastNameDetail.text = lastName
+//        tvDesc.text = desc
     }
 
     companion object {

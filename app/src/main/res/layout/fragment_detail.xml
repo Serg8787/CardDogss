@@ -1,63 +1,187 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/design_default_color_primary"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".FragmentDetail">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="wrap_content"
+        android:id="@+id/idCardView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp">
+        android:layout_marginBottom="5dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"           >
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constRootDet"
-            android:layout_width="wrap_content"
+            android:id="@+id/constFirst"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp">
+            android:layout_margin="5dp"
+            tools:ignore="MissingConstraints">
+
             <ImageView
                 android:id="@+id/ivAvatarDetail"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                app:layout_constraintStart_toEndOf="@id/tvLastNameDetail"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="5dp"
+                android:background="@android:drawable/picture_frame"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="MissingConstraints" />
 
             <TextView
+                android:id="@+id/tvLabelNameDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:text="Кличка :"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/ivAvatarDetail"
+                app:layout_constraintTop_toTopOf="@+id/ivAvatarDetail" />
+
+            <TextView
                 android:id="@+id/tvNameDetail"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="Name"
-                android:textSize="25sp"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:layout_editor_absoluteY="0dp" />
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="Ника"
+                app:layout_constraintBottom_toBottomOf="@+id/tvLabelNameDetail"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvLabelNameDetail"
+                app:layout_constraintTop_toTopOf="@+id/tvLabelNameDetail" />
 
             <TextView
-                android:id="@+id/tvLastNameDetail"
+                android:id="@+id/tvLabelAge"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="LastName"
-                android:textSize="25sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/tvNameDetail"
-                app:layout_constraintTop_toBottomOf="@+id/tvNameDetail" />
+                android:layout_height="wrap_content"
+                android:text="Возраст :"
+                style="@style/styleGlav"
+                app:layout_constraintStart_toStartOf="@+id/tvLabelNameDetail"
+                app:layout_constraintTop_toBottomOf="@+id/tvLabelNameDetail" />
 
             <TextView
-                android:id="@+id/tvDesc"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="desc"
-                android:textSize="25sp"
+                android:id="@+id/tvAgeDetail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="2 года 7 месяцев"
+                android:layout_marginStart="10dp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvLabelAge"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/tvNameDetail"
-                app:layout_constraintTop_toBottomOf="@+id/tvLastNameDetail" />
+                app:layout_constraintStart_toEndOf="@+id/tvLabelAge"
+                app:layout_constraintTop_toBottomOf="@+id/tvLabelNameDetail" />
+
+            <TextView
+                android:id="@+id/textView4"
+                style="@style/styleGlav"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="Порода"
+                app:layout_constraintStart_toStartOf="@+id/ivAvatarDetail"
+                app:layout_constraintTop_toBottomOf="@+id/ivAvatarDetail" />
+
+            <TextView
+                android:id="@+id/tvDescDetail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Западно-сибирская лайка"
+                android:layout_marginStart="10dp"
+                android:textSize="17dp"
+                app:layout_constraintBottom_toBottomOf="@+id/textView4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView4"
+                app:layout_constraintTop_toBottomOf="@+id/ivAvatarDetail" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constTwo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toBottomOf="@+id/constFirst"
+            android:layout_margin="5dp">
 
+            <TextView
+                android:id="@+id/tvLabelDesc"
+                style="@style/styleGlav"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Описание породы"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints" />
+            <TextView
+                android:id="@+id/tvDescDetail"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="Моя собака"
+                android:gravity="center"
+                app:layout_constraintTop_toBottomOf="@+id/tvLabelDesc"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:ignore="DuplicateIds" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constThree"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                app:layout_constraintTop_toBottomOf="@+id/constTwo">
+
+                <TextView
+                    android:id="@+id/tvLabelAllDescDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Основные особенности"
+                    style="@style/styleGlav"
+                    android:gravity="center"
+                    app:layout_constraintTop_toTopOf="parent"/>
+                <TextView
+                    android:id="@+id/tvAllDescDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Ключевые особенности"
+                    app:layout_constraintTop_toBottomOf="@+id/tvLabelAllDescDetail"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constFour"
+                app:layout_constraintTop_toBottomOf="@id/constThree"
+                android:layout_margin="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tvLabelFacts"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Основные факты"
+                    style="@style/styleGlav"/>
+                <TextView
+                    android:id="@+id/tvFactDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvLabelFacts"
+                    android:text="Факты о породе"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
 
-</FrameLayout>
+
+
+</ScrollView>
